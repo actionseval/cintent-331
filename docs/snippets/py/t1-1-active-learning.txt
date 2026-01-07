@@ -1,0 +1,3 @@
+from hover.recipes.experimental import active_learning
+
+interactive_plot = active_learning(dataset, vecnet)

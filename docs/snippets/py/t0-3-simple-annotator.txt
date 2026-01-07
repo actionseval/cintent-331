@@ -1,0 +1,3 @@
+from hover.recipes.stable import simple_annotator
+
+interactive_plot = simple_annotator(dataset)

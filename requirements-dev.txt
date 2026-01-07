@@ -1,0 +1,14 @@
+# automation
+tox
+tox-gh-actions
+pre-commit
+# documentation
+mkdocs
+mkdocs-material
+mkdocs-macros-plugin
+mkdocstrings
+markdown-include
+mike
+# interactive development
+jupyter
+jupyterlab

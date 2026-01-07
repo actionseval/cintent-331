@@ -1,0 +1,87 @@
+site_name: Hover
+site_description: "Hover and label data rapidly."
+site_url: "https://phurwicz.github.io/hover"
+repo_url: "https://github.com/phurwicz/hover.git"
+repo_name: "phurwicz/hover"
+
+theme:
+    name: material
+    icon:
+      logo: material/alpha-h-box
+    favicon: images/favicon.png
+    font:
+      text: Roboto
+      code: Roboto Mono
+    features:
+      - navigation.expand
+      - navigation.tabs
+      - search.suggest
+      - toc.integrate
+
+nav:
+    - Home: 'index.md'
+    - 'Tutorial':
+        - 'Quickstart': 'pages/tutorial/t0-quickstart.md'
+        - 'Using Recipes': 'pages/tutorial/t1-active-learning.md'
+        - 'Server Options': 'pages/tutorial/t2-bokeh-app.md'
+        - 'Dataset Mechanisms': 'pages/tutorial/t3-dataset-population-selection.md'
+        - 'Annotator & Plot Tools': 'pages/tutorial/t4-annotator-dataset-interaction.md'
+        - 'Finder & Selection Filter': 'pages/tutorial/t5-finder-filter.md'
+        - 'Soft Label & Joint Filters': 'pages/tutorial/t6-softlabel-joint-filter.md'
+        - 'Custom Labeling Functions': 'pages/tutorial/t7-snorkel-improvise-rules.md'
+    - 'Guides':
+        - 'Image Data': 'pages/guides/g0-datatype-image.md'
+        - 'Audio Data': 'pages/guides/g1-datatype-audio.md'
+        - 'Custom Config': 'pages/guides/g2-hover-config.md'
+    #    - 'Data Type: Multimodal': 'pages/topics/datatype-multimodal.md'
+        #- 'Why Hover': 'pages/topics/what-hover-is.md'
+        #- 'Customized Usage':
+        #    - 'API Levels': 'pages/topics/api-levels.md' # discuss the interaction between recipe / dataset / explorer
+        #    - 'Custom Recipe': 'pages/topics/custom-recipe.md' # discuss the caveats when making a recipe
+        #    - 'Subclassing Dataset': 'pages/topics/custom-dataset.md' # discuss the caveats when subclassing a SupervisableDataset
+        #    - 'Subclassing Explorer': 'pages/topics/custom-explorer.md' # discuss the caveats when subclassing a BokehBaseExplorer
+    - 'API Reference':
+        - 'hover.recipes': 'pages/reference/recipes.md'
+        - 'hover.core':
+            - 'hover.core.dataset': 'pages/reference/core-dataset.md'
+            - 'hover.core.explorer':
+                - '.base': 'pages/reference/core-explorer-base.md'
+                - '.feature': 'pages/reference/core-explorer-feature.md'
+                - '.functionality': 'pages/reference/core-explorer-functionality.md'
+                - '.specialization': 'pages/reference/core-explorer-specialization.md'
+            - 'hover.core.neural': 'pages/reference/core-neural.md'
+            - 'hover.core.representation': 'pages/reference/core-representation.md'
+        - 'hover.utils':
+            - 'hover.utils.bokeh_helper': 'pages/reference/utils-bokeh_helper.md'
+            - 'hover.utils.snorkel_helper': 'pages/reference/utils-snorkel_helper.md'
+
+markdown_extensions:
+  - admonition
+  - def_list
+  - markdown_include.include
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - macros
+  - search:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_root_heading: true
+            show_source: true
+      watch:
+        - hover
+
+extra:
+  version:
+    provider: mike
+  analytics:
+    provider: google
+    property: G-M3WR5YEJ33

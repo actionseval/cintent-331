@@ -1,0 +1,65 @@
+{% set name = "hover" %}
+{% set version = "0.8.1" %}
+
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/phurwicz/hover.git
+
+build:
+  number: 0
+  noarch: python
+  script: python -m pip install . -vv
+
+requirements:
+  host:
+    - python >=3.7
+    - pip
+  run:
+    - python >=3.7
+    - bokeh >=3.0.3
+    - scikit-learn >=0.20.0
+    - pytorch >=1.10.0
+    - pandas >=1.3.0
+    - numpy >=1.14
+    - scipy >=1.3.2
+    - tqdm >=4.0
+    - rich >=11.0.0
+    - deprecated >=1.1.0
+    - umap-learn >=0.3.10
+    - flexmod >=0.1.0
+
+test:
+  imports:
+    - hover
+  commands:
+    - python -m spacy download en_core_web_md
+    - pytest -m lite
+  requires:
+    - pip
+    - pytest
+    - spacy
+    - faker
+    - snorkel>=0.9.8
+    - openpyxl
+    - wrappy
+    - shaffle
+  source_files:
+    - fixture_module
+    - tests
+    - pytest.ini
+
+about:
+  home: https://phurwicz.github.io/hover
+  license: MIT
+  license_file: LICENSE
+  summary: Label data at scale. Fun and precision included.
+  dev_url: https://github.com/phurwicz/hover
+
+extra:
+  recipe-maintainers:
+    - phurwicz
+    - haochuanwei
